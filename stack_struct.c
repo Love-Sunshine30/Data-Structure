@@ -21,6 +21,7 @@ int pop(){
 	else{
 	    int temp = top->data;
 	    top = top->next;
+	    free(temp);
 	    return temp;
 	}
 }
