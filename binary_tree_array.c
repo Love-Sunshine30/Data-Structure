@@ -17,6 +17,22 @@ void preorderTraversal(int index){
 	preorderTraversal(index * 2 + 2);
 }
 
+void inorderTraversal(int index){
+	if(tree[index] == '#') return;
+
+	inorderTraversal(index * 2 + 1);
+	printf("%c ", tree[index]);
+	inorderTraversal(index * 2 + 2);
+}
+
+void postorderTraversal(int index){
+	if(tree[index] == '#') return;
+
+	postorderTraversal(index * 2 + 1);
+	postorderTraversal(index * 2 + 2);
+	printf("%c ", tree[index]);
+}
+
 int main(){
 	// initializing the array with a value
 	init(tree, max);
@@ -30,5 +46,7 @@ int main(){
 	tree[3] = 'F';
 	tree[4] = 'G';
 
-	preorderTraversal(0);
+	//preorderTraversal(0);
+	//inorderTraversal(0);
+	postorderTraversal(0);
 }
